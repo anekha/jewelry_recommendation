@@ -1,8 +1,8 @@
-cv2
-mtcnn
-matplotlib
 numpy
 Pillow
+matplotlib
 scikit-learn
-opencv-python-headless
+opencv-python-headless  # Use this instead of cv2
 streamlit
+mtcnn
+tensorflow

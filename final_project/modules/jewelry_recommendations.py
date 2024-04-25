@@ -62,6 +62,9 @@ def generate_jewelry_recommendations(image_path, num_colors=5):
         recommendations['gemstone_shape'] = recommend_gemstone_shape(face_shape)
         recommendations['gemstone_recommendation'] = recommend_gemstone_skin_tone(undertone.lower())
         recommendations['metal_color_recommendation'] = recommend_metal_color_skin_tone(undertone.lower())
+        recommendations['undertone'] = undertone.lower()  # Add undertone to recommendations
+        recommendations['colors'] = colors  # Add colors to recommendations
+        recommendations['hist'] = hist  # Add histogram of colors to recommendations
     else:
         default_message = "No face detected or too small to analyze."
         recommendations.update({
@@ -70,9 +73,9 @@ def generate_jewelry_recommendations(image_path, num_colors=5):
             'gemstone_shape': default_message,
             'gemstone_recommendation': default_message,
             'metal_color_recommendation': default_message,
-            'undertone': undertone.lower(),
-            'colors': colors,
-            'hist': hist
+            'undertone': None,  # Set undertone to None when no keypoints are detected
+            'colors': None,  # Set colors to None when no keypoints are detected
+            'hist': None  # Set histogram of colors to None when no keypoints are detected
         })
 
     return recommendations
