@@ -1,0 +1,8 @@
+cv2
+mtcnn
+matplotlib
+numpy
+Pillow
+scikit-learn
+opencv-python-headless
+streamlit
